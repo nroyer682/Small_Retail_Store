@@ -85,14 +85,14 @@ The system includes three custom exceptions:
 # Compile the source files
 javac -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java
 
-# Compile with JUnit tests
-javac -cp .:junit-4.xx.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
+# Compile with JUnit tests (adjust junit-4.xx.jar path to your JUnit installation)
+javac -cp .:path/to/junit-4.xx.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
 ```
 
 ### Running Tests
 ```bash
-# Run JUnit tests
-java -cp Small_Retail_Store/bin:junit-4.xx.jar:hamcrest-core-1.x.jar org.junit.runner.JUnitCore junit_tests.StarterTests
+# Run JUnit tests (adjust JAR paths to your JUnit installation)
+java -cp Small_Retail_Store/bin:path/to/junit-4.xx.jar:path/to/hamcrest-core-1.x.jar org.junit.runner.JUnitCore junit_tests.StarterTests
 ```
 
 ## Usage Example
@@ -107,8 +107,12 @@ RetailStore store1 = new RetailStore("Downtown Store");
 RetailStore store2 = new RetailStore("Uptown Store");
 
 // Assign stores to manager
-store1.setManager(manager);
-store2.setManager(manager);
+try {
+    store1.setManager(manager);
+    store2.setManager(manager);
+} catch (TooManyStoresException e) {
+    System.out.println("Cannot assign store: " + e.getMessage());
+}
 
 // Add stock to a store
 store1.addStock("iPad Mini", 50);
@@ -118,7 +122,11 @@ store1.addStock("Surface Pro 9", 30);
 CustomerProfile customer = new CustomerProfile("Alice", 10);
 
 // Add an order to customer profile
-customer.addOrder("iPad Mini", 2, "Downtown Store", "2024-01-15");
+try {
+    customer.addOrder("iPad Mini", 2, "Downtown Store", "2024-01-15");
+} catch (InvalidProductKindException e) {
+    System.out.println("Invalid product: " + e.getMessage());
+}
 
 // Submit order to store
 try {
