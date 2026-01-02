@@ -85,20 +85,20 @@ The system includes three custom exceptions:
 # Compile the source files
 javac -cp Small_Retail_Store/src -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java
 
-# Compile with JUnit tests (adjust junit-4.xx.jar path to your JUnit installation)
+# Compile with JUnit tests (adjust paths to your JUnit installation, e.g., junit-4.13.jar)
 # On Unix/Linux/Mac:
-javac -cp Small_Retail_Store/src:path/to/junit-4.xx.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
+javac -cp Small_Retail_Store/src:path/to/junit-4.13.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
 # On Windows:
-javac -cp Small_Retail_Store/src;path/to/junit-4.xx.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
+javac -cp Small_Retail_Store/src;path/to/junit-4.13.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
 ```
 
 ### Running Tests
 ```bash
-# Run JUnit tests (adjust JAR paths to your JUnit installation)
+# Run JUnit tests (adjust paths to your JUnit installation, e.g., junit-4.13.jar and hamcrest-core-1.3.jar)
 # On Unix/Linux/Mac:
-java -cp Small_Retail_Store/bin:path/to/junit-4.xx.jar:path/to/hamcrest-core-1.x.jar org.junit.runner.JUnitCore junit_tests.StarterTests
+java -cp Small_Retail_Store/bin:path/to/junit-4.13.jar:path/to/hamcrest-core-1.3.jar org.junit.runner.JUnitCore junit_tests.StarterTests
 # On Windows:
-java -cp Small_Retail_Store/bin;path/to/junit-4.xx.jar;path/to/hamcrest-core-1.x.jar org.junit.runner.JUnitCore junit_tests.StarterTests
+java -cp Small_Retail_Store/bin;path/to/junit-4.13.jar;path/to/hamcrest-core-1.3.jar org.junit.runner.JUnitCore junit_tests.StarterTests
 ```
 
 ## Usage Example
