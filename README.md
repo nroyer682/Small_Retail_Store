@@ -86,13 +86,19 @@ The system includes three custom exceptions:
 javac -cp Small_Retail_Store/src -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java
 
 # Compile with JUnit tests (adjust junit-4.xx.jar path to your JUnit installation)
+# On Unix/Linux/Mac:
 javac -cp Small_Retail_Store/src:path/to/junit-4.xx.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
+# On Windows:
+javac -cp Small_Retail_Store/src;path/to/junit-4.xx.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
 ```
 
 ### Running Tests
 ```bash
 # Run JUnit tests (adjust JAR paths to your JUnit installation)
+# On Unix/Linux/Mac:
 java -cp Small_Retail_Store/bin:path/to/junit-4.xx.jar:path/to/hamcrest-core-1.x.jar org.junit.runner.JUnitCore junit_tests.StarterTests
+# On Windows:
+java -cp Small_Retail_Store/bin;path/to/junit-4.xx.jar;path/to/hamcrest-core-1.x.jar org.junit.runner.JUnitCore junit_tests.StarterTests
 ```
 
 ## Usage Example
