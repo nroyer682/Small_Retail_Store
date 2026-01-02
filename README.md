@@ -83,10 +83,10 @@ The system includes three custom exceptions:
 ### Compilation
 ```bash
 # Compile the source files
-javac -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java
+javac -cp Small_Retail_Store/src -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java
 
 # Compile with JUnit tests (adjust junit-4.xx.jar path to your JUnit installation)
-javac -cp .:path/to/junit-4.xx.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
+javac -cp Small_Retail_Store/src:path/to/junit-4.xx.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
 ```
 
 ### Running Tests
