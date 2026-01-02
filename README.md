@@ -28,18 +28,20 @@ The system supports six product types:
 ## Project Structure
 
 ```
-Small_Retail_Store/
-├── src/
-│   ├── model/
-│   │   ├── CustomerProfile.java          # Customer profile and order management
-│   │   ├── RetailStore.java              # Store operations and inventory
-│   │   ├── StoreManager.java             # Manager for multiple stores (Singleton)
-│   │   ├── InsufficientStockException.java
-│   │   ├── InvalidProductKindException.java
-│   │   └── TooManyStoresException.java
-│   └── junit_tests/
-│       └── StarterTests.java             # JUnit test suite
-└── bin/                                   # Compiled class files
+.
+├── Small_Retail_Store/
+│   ├── src/
+│   │   ├── model/
+│   │   │   ├── CustomerProfile.java          # Customer profile and order management
+│   │   │   ├── RetailStore.java              # Store operations and inventory
+│   │   │   ├── StoreManager.java             # Manager for multiple stores (Singleton)
+│   │   │   ├── InsufficientStockException.java
+│   │   │   ├── InvalidProductKindException.java
+│   │   │   └── TooManyStoresException.java
+│   │   └── junit_tests/
+│   │       └── StarterTests.java             # JUnit test suite
+│   └── bin/                                   # Compiled class files
+└── README.md
 ```
 
 ## Core Components
@@ -81,16 +83,16 @@ The system includes three custom exceptions:
 ### Compilation
 ```bash
 # Compile the source files
-javac -d bin src/model/*.java
+javac -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java
 
 # Compile with JUnit tests
-javac -cp .:junit-4.xx.jar -d bin src/model/*.java src/junit_tests/*.java
+javac -cp .:junit-4.xx.jar -d Small_Retail_Store/bin Small_Retail_Store/src/model/*.java Small_Retail_Store/src/junit_tests/*.java
 ```
 
 ### Running Tests
 ```bash
 # Run JUnit tests
-java -cp bin:junit-4.xx.jar:hamcrest-core-1.x.jar org.junit.runner.JUnitCore junit_tests.StarterTests
+java -cp Small_Retail_Store/bin:junit-4.xx.jar:hamcrest-core-1.x.jar org.junit.runner.JUnitCore junit_tests.StarterTests
 ```
 
 ## Usage Example
